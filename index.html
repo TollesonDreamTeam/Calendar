@@ -1,0 +1,712 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Test App</title>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="jquery.js"></script>
+    <script src="datePicker.js"></script>
+</head>
+<body>
+    <h1 onclick="loadConfigs('#filtersModalTop_1-1')">Submit</h1>
+    <h1 onclick="drawCalendar()">Open Calendar</h1>
+    <div id="sd"></div>
+    <div id="filtersModalTop_1-1" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false">
+        <table style="width: 100%; top: 0px;">
+            <caption>
+                <h2>General Demographics - 1st Report Filters</h2>
+            </caption>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select School Site(s):</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="2011-1" name="2011-1" class="school1-1" value="201">Tolleson High School</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="2021-1" name="2021-1" class="school1-1" value="202">Westview High School</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="2031-1" name="2031-1" class="school1-1" value="203">La Joya Community High School</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="2041-1" name="2041-1" class="school1-1" value="204">Copper Canyon High School</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="2051-1" name="2051-1" class="school1-1" value="205">Sierra Linda High School</label> 
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="2071-1" name="2071-1" class="school1-1" value="207">TUHSD University High</label>
+                    </td>  
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select School Year:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="radio" id="20101-1" name="sy1-1" class="sy1-1" value="2010">2010-2011</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="radio" id="20111-1" name="sy1-1" class="sy1-1" value="2011">2011-2012</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="radio" id="20121-1" name="sy1-1" class="sy1-1" value="2012">2012-2013</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="radio" id="20131-1" name="sy1-1" class="sy1-1" value="2013">2013-2014</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="radio" id="20141-1" name="sy1-1" class="sy1-1" value="2014">2014-2015</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="radio" id="20151-1" name="sy1-1" class="sy1-1" value="2015">2015-2016</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select Grade(s):</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="1901-1" name="1901-1" class="cohort1-1" value="190">9th Grade</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="2001-1" name="2001-1" class="cohort1-1" value="200">10th Grade</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="2101-1" name="2101-1" class="cohort1-1" value="210">11th Grade</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="2201-1" name="2201-1" class="cohort1-1" value="220">12th Grade</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select Gender(s):</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="F1-1" name="F1-1" class="gender1-1" value="F">Female</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="M1-1" name="M1-1" class="gender1-1" value="M">Male</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select Ethnicities:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="__HIS1-1" name="__HIS1-1" class="ethnicity1-1" value="__HIS">Hispanic (Primary Race)</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="__TWO1-1" name="__TWO1-1" class="ethnicity1-1" value="__TWO">Two or More</label>
+                    </td>
+                </tr>
+                <tr>   
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="A1-1" name="A1-1" class="ethnicity1-1" value="A">Asian</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="B1-1" name="B1-1" class="ethnicity1-1" value="B">Black or African American</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="I1-1" name="I1-1" class="ethnicity1-1" value="I">American Indian or Alaskan Native</label>
+                    </td> 
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="P1-1" name="P1-1" class="ethnicity1-1" value="P">Native Hawaiian or Other Pacific Islander</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="W1-1" name="W1-1" class="ethnicity1-1" value="W">White</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select SPED Identifier:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="sped1-1" value="N">Include Non-SPED Students</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="sped1-1" value="Y">Include SPED Students</label>
+                    </td>  
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select ELL Identifier:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="ell1-1" value="N">Include Non-ELL Students</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="ell1-1" value="Y">Include ELL Students</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select Gifted Identifier:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="gifted1-1" value="N">Include Non-Gifted Students</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="gifted1-1" value="Y">Include Gifted Students</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select McKinney-Vento Identifier:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="mv1-1" value="N">Include Non-McKinney-Vento Students</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="mv1-1" value="Y">Include McKinney-Vento Students</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select 504 Identifier:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="h5041-1" value="N">Include Non-504 Students</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="h5041-1" value="Y">Include 504 Students</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select Open-Enrollment Identifier:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="open1-1" value="N">Include Non-Open-Enrollment Students</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="open1-1" value="Y">Include Open-Enrollment Students</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select Course Academic Type:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="R1-1" name="R1-1" class="acdtyp1-1" value="R">Regular</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="H1-1" name="H1-1" class="acdtyp1-1" value="H">Honors</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="acdtyp1-1" value="N">Non-Academic</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select Course Department:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="PE1-1" name="PE1-1" class="crsdpt1-1" value="PE">Physical Education</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="SS1-1" name="SS1-1" class="crsdpt1-1" value="SS">Social Studies</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="MTH1-1" name="MTH1-1" class="crsdpt1-1" value="MTH">Math</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="ENG1-1" name="ENG1-1" class="crsdpt1-1" value="ENG">English</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="SCI1-1" name="SCI1-1" class="crsdpt1-1" value="SCI">Science</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="SPD1-1" name="SPD1-1" class="crsdpt1-1" value="SPD">Special Education</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="MSC1-1" name="MSC1-1" class="crsdpt1-1" value="MSC">Miscellaneous</label>
+                    </td>
+                        <td style="width: 50%;"><label><input type="checkbox" id="FL1-1" name="FL1-1" class="crsdpt1-1" value="FL">Foreign Language</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="PVA1-1" name="PVA1-1" class="crsdpt1-1" value="PVA">Performing Arts &amp; Visual</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="BIL1-1" name="BIL1-1" class="crsdpt1-1" value="BIL">Billingual</label></td>
+                </tr>
+                <tr>   
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="CTE1-1" name="CTE1-1" class="crsdpt1-1" value="CTE">Career &amp; Technical Education</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select JTED Enrolled Students:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="jtd1-1" value="Y">Include JTED Enrolled Students</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="jtd1-1" value="N">Include Non-JTED Enrolled Students</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select JTED Courses:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="jtdcrs1-1" value="Y">Include JTED Courses</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="jtdcrs1-1" value="N">Include Non-JTED Courses</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select FRM Identifier:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="frm1-1" value="N">Include Non-FRM Students</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="frm1-1" value="Y">Include FRM Students</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select Instructional Setting(s):</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="CFT1-1" name="CFT1-1" class="instrctset1-1" value="CFT">CEA Full-time</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="CPT1-1" name="CPT1-1" class="instrctset1-1" value="CPT">CEA Part-time</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="SCFT1-1" name="SCFT1-1" class="instrctset1-1" value="SCFT">SpEd CEA FT</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="SCPT1-1" name="SCPT1-1" class="instrctset1-1" value="SCPT">SpEd CEA PT</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="SLHA1-1" name="SLHA1-1" class="instrctset1-1" value="SLHA">SpEd LHA</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="SLHAP1-1" name="SLHAP1-1" class="instrctset1-1" value="SLHAP">SpEd LHA PT</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="LHA1-1" name="LHA1-1" class="instrctset1-1" value="LHA">Lighthouse Academy</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="SE1-1" name="SE1-1" class="instrctset1-1" value="SE">Special Ed</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="SEPP1-1" name="SEPP1-1" class="instrctset1-1" value="SEPP">SpEd Private Pd</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="5041-1" name="5041-1" class="instrctset1-1" value="504">504</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="C5041-1" name="C5041-1" class="instrctset1-1" value="C504">C504</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="ELL1-1" name="ELL1-1" class="instrctset1-1" value="ELL">ELL</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="5L1-1" name="5L1-1" class="instrctset1-1" value="5L">5L</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="None1-1" name="None1-1" class="instrctset1-1" value="None">None Specified</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select to Show Only Sport Team Memberships for Group(s):</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="B CrossCty1-1" name="B CrossCty1-1" class="sport1-1" value="B CrossCty">Boys Cross Country</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="B CrossCty1-1" name="B CrossCty1-1" class="sport1-1" value="B CrossCty">Boys Swimming</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="B Tennis1-1" name="B Tennis1-1" class="sport1-1" value="B Tennis">Boys Tennis</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="B Trkfield1-1" name="B Trkfield1-1" class="sport1-1" value="B Trkfield">Boys Track and Field</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Boys Golf1-1" name="Boys Golf1-1" class="sport1-1" value="Boys Golf">Boys Golf</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Cross Cty1-1" name="Cross Cty1-1" class="sport1-1" value="Cross Cty">Cross Country</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="F Basebl1-1" name="F Basebl1-1" class="sport1-1" value="F Basebl">Freshman Baseball</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="F Footbl1-1" name="F Footbl1-1" class="sport1-1" value="F Footbl">Freshman Football</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="F Softbl1-1" name="F Softbl1-1" class="sport1-1" value="F Softbl">Freshman Girls Softball</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="F Spirit1-1" name="F Spirit1-1" class="sport1-1" value="F Spirit">Freshman Girls Spiritline</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="F Volley1-1" name="F Volley1-1" class="sport1-1" value="F Volley">Freshman Volleyball</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="F Wrstl1-1" name="F Wrstl1-1" class="sport1-1" value="F Wrstl">Freshman Wrestling</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="FB Bsktbl1-1" name="FB Bsktbl1-1" class="sport1-1" value="FB Bsktbl">Freshman Boys Basketball</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="FG Bsktbl1-1" name="FG Bsktbl1-1" class="sport1-1" value="FG Bsktbl">Freshman Girls Basketball</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="G CrossCty1-1" name="G CrossCty1-1" class="sport1-1" value="G CrossCty">Girls Cross Country</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="G Swimming1-1" name="G Swimming1-1" class="sport1-1" value="G Swimming">Girls Swimming</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="G Trkfield1-1" name="G Trkfield1-1" class="sport1-1" value="G Trkfield">Girls Track and field</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Girls Golf1-1" name="Girls Golf1-1" class="sport1-1" value="Girls Golf">Girls Golf</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Girls Tenn1-1" name="Girls Tenn1-1" class="sport1-1" value="Girls Tenn">Girls Tennis</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="JV Basebl1-1" name="JV Basebl1-1" class="sport1-1" value="JV Basebl">JV Baseball</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="JV Footbl1-1" name="JV Footbl1-1" class="sport1-1" value="JV Footbl">JV Football</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="JV Softbl1-1" name="JV Softbl1-1" class="sport1-1" value="JV Softbl">JV Girls Softball</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="JV Spirit1-1" name="JV Spirit1-1" class="sport1-1" value="JV Spirit">JV Girls Spiritline</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="JV Volley1-1" name="JV Volley1-1" class="sport1-1" value="JV Volley">JV Volleyball</label>
+                    </td>
+                </tr>
+                <tr>   
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="JV Wrstl1-1" name="JV Wrstl1-1" class="sport1-1" value="JV Wrstl">JV Wrestling</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="JVB Bsktbl1-1" name="JVB Bsktbl1-1" class="sport1-1" value="JVB Bsktbl">JV Boys Basketball</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="JVB Soccer1-1" name="JVB Soccer1-1" class="sport1-1" value="JVB Soccer">JV Boys Soccer</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="JVG Bsktbl1-1" name="JVG Bsktbl1-1" class="sport1-1" value="JVG Bsktbl">JV Girls Basketball</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="JVG Soccer1-1" name="JVG Soccer1-1" class="sport1-1" value="JVG Soccer">JV Girls Soccer</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="SumFtbl1-1" name="SumFtbl1-1" class="sport1-1" value="SumFtbl">Summer Football</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Summer Ftb1-1" name="Summer Ftb1-1" class="sport1-1" value="Summer Ftb">Summer Football</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Swim/Dive1-1" name="Swim/Dive1-1" class="sport1-1" value="Swim/Dive">Swimming</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="TrkField1-1" name="TrkField1-1" class="sport1-1" value="TrkField">Track and Field</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="V Basebl1-1" name="V Basebl1-1" class="sport1-1" value="V Basebl">Varsity Baseball</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="V Footbl1-1" name="V Footbl1-1" class="sport1-1" value="V Footbl">Varsity Football</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="V Softbl1-1" name="V Softbl1-1" class="sport1-1" value="V Softbl">Varsity Girls Softball</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="V Spirit1-1" name="V Spirit1-1" class="sport1-1" value="V Spirit">Varisty Girls Spiritline</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="V Volley1-1" name="V Volley1-1" class="sport1-1" value="V Volley">Varsity Volleyball</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="V Wrstl1-1" name="V Wrstl1-1" class="sport1-1" value="V Wrstl">Varsity Wrestling</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="VB Bsktbl1-1" name="VB Bsktbl1-1" class="sport1-1" value="VB Bsktbl">Varsity Boys Basketball</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="VB Soccer1-1" name="VB Soccer1-1" class="sport1-1" value="VB Soccer">Varsity Boys Soccer</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="VG Bsktbl1-1" name="VG Bsktbl1-1" class="sport1-1" value="VG Bsktbl">Varsity Girls Basketball</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="VG Soccer1-1" name="VG Soccer1-1" class="sport1-1" value="VG Soccer">Varsity Girls Soccer</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select Classes Excluded From Attendance:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="excatt1-1" value="N">Attendance Excluded Classes</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="excatt1-1" value="Y">Attendance Included Classes</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select Classes Excluded From Grading:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="excgrd1-1" value="N">Grading Excluded Classes</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="excgrd1-1" value="Y">Grading Included Classes</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;">
+            <caption style="background-color: aliceblue;">
+                <h4>Select Dropout Identifier:</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="N1-1" name="N1-1" class="drpout1-1" value="N">Include Non-Dropout Students</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Y1-1" name="Y1-1" class="drpout1-1" value="Y">Include Dropout Students</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; vertical-align: top; top: 0px; background-color: white;">
+            <caption style="background-color: white;">
+                <h4>Select Feeder School(s):</h4>
+            </caption>
+            <tbody>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Amberlea1-1" name="Amberlea1-1" class="fdrschl1-1" value="Amberlea">Amberlea</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Arizona Desert1-1" name="Arizona Desert1-1" class="fdrschl1-1" value="Arizona Desert">Arizona Desert</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Calderwood1-1" name="Calderwood1-1" class="fdrschl1-1" value="Calderwood">Calderwood</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Canyon Breeze1-1" name="Canyon Breeze1-1" class="fdrschl1-1" value="Canyon Breeze">Canyon Breeze</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Collier1-1" name="Collier1-1" class="fdrschl1-1" value="Collier">Collier</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Copper King1-1" name="Copper King1-1" class="fdrschl1-1" value="Copper King">Copper King</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Country Place1-1" name="Country Place1-1" class="fdrschl1-1" value="Country Place">Country Place</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Desert Horizon1-1" name="Desert Horizon1-1" class="fdrschl1-1" value="Desert Horizon">Desert Horizon</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Desert Mirage1-1" name="Desert Mirage1-1" class="fdrschl1-1" value="Desert Mirage">Desert Mirage</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Desert Oasis1-1" name="Desert Oasis1-1" class="fdrschl1-1" value="Desert Oasis">Desert Oasis</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Estrella Vista1-1" name="Estrella Vista1-1" class="fdrschl1-1" value="Estrella Vista">Estrella Vista</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Fowler1-1" name="Fowler1-1" class="fdrschl1-1" value="Fowler">Fowler</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Garden Lakes1-1" name="Garden Lakes1-1" class="fdrschl1-1" value="Garden Lakes">Garden Lakes</label>
+                    </td>
+                    <td style="width: 50%;">
+                        <label><input type="checkbox" id="Gonzales1-1" name="Gonzales1-1" class="fdrschl1-1" value="Gonzales">Gonzales</label>
+                    </td></tr><tr><td style="width: 50%;"><label><input type="checkbox" id="Littleton1-1" name="Littleton1-1" class="fdrschl1-1" value="Littleton">Littleton</label></td><td style="width: 50%;"><label><input type="checkbox" id="NotInFeederSystem1-1" name="NotInFeederSystem1-1" class="fdrschl1-1" value="NotInFeederSystem">Not In Feeder System</label></td></tr><tr><td style="width: 50%;"><label><input type="checkbox" id="Pendergast1-1" name="Pendergast1-1" class="fdrschl1-1" value="Pendergast">Pendergast</label></td><td style="width: 50%;"><label><input type="checkbox" id="Quentin1-1" name="Quentin1-1" class="fdrschl1-1" value="Quentin">Quentin</label></td></tr><tr><td style="width: 50%;"><label><input type="checkbox" id="Rio Vista1-1" name="Rio Vista1-1" class="fdrschl1-1" value="Rio Vista">Rio Vista</label></td><td style="width: 50%;"><label><input type="checkbox" id="Santa Maria1-1" name="Santa Maria1-1" class="fdrschl1-1" value="Santa Maria">Santa Maria</label></td></tr><tr><td style="width: 50%;"><label><input type="checkbox" id="Sheely Farms1-1" name="Sheely Farms1-1" class="fdrschl1-1" value="Sheely Farms">Sheely Farms</label></td><td style="width: 50%;"><label><input type="checkbox" id="Sonoran Sky1-1" name="Sonoran Sky1-1" class="fdrschl1-1" value="Sonoran Sky">Sonoran Sky</label></td></tr><tr><td style="width: 50%;"><label><input type="checkbox" id="Sunset Ridge1-1" name="Sunset Ridge1-1" class="fdrschl1-1" value="Sunset Ridge">Sunset Ridge</label></td><td style="width: 50%;"><label><input type="checkbox" id="Tres Rios1-1" name="Tres Rios1-1" class="fdrschl1-1" value="Tres Rios">Tres Rios</label></td></tr><tr><td style="width: 50%;"><label><input type="checkbox" id="Underdown1-1" name="Underdown1-1" class="fdrschl1-1" value="Underdown">Underdown</label></td><td style="width: 50%;"><label><input type="checkbox" id="Union1-1" name="Union1-1" class="fdrschl1-1" value="Union">Union</label></td></tr><tr><td style="width: 50%;"><label><input type="checkbox" id="Villa De Paz1-1" name="Villa De Paz1-1" class="fdrschl1-1" value="Villa De Paz">Villa De Paz</label></td><td style="width: 50%;"><label><input type="checkbox" id="Western Valley1-1" name="Western Valley1-1" class="fdrschl1-1" value="Western Valley">Western Valley</label></td></tr><tr><td style="width: 50%;"><label><input type="checkbox" id="Westwind1-1" name="Westwind1-1" class="fdrschl1-1" value="Westwind">Westwind</label></td><td style="width: 50%;"><label><input type="checkbox" id="No Data1-1" name="No Data1-1" class="fdrschl1-1" value="No Data">No Data in System</label></td></tr></tbody></table><table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;"><caption style="background-color: aliceblue;"><h4>Select Start/End Dates (Values outside of the selected School Year will be ignored):</h4></caption><tbody><tr><td style="width: 50%;"><label>Start Date: <input type="text" id="StartDate1-1" name="StartDate1-1" class="datebox1-1 hasDatepicker"></label></td><td style="width: 50%;"><label>End Date: <input type="text" id="EndDate1-1" name="EndDate1-1" class="datebox1-1 hasDatepicker"></label></td></tr></tbody></table><table style="width: 100%; vertical-align: top; top: 0px; background-color: white;"><caption style="background-color: white;"><h4>Search By Class Section List (Must be comma delimited with no additional punctuation):</h4></caption><tbody><tr><td style="width: 50%;"><label>Enter Sections List: <textarea id="sections1-1" name="sections1-1" class="textarea1-1" rows="4" style="width: 95%;"></textarea></label></td></tr></tbody></table><table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;"><caption style="background-color: aliceblue;"><h4>Search By Course ID List (Must be comma delimited with no additional punctuation):</h4></caption><tbody><tr><td style="width: 50%;"><label>Enter Course ID List: <textarea id="courses1-1" name="courses1-1" class="textarea1-1" rows="4" style="width: 95%;"></textarea></label></td></tr></tbody></table><table style="width: 100%; vertical-align: top; top: 0px; background-color: white;"><caption style="background-color: white;"><h4>Search By Course Title List (Must be comma delimited with no additional punctuation):</h4></caption><tbody><tr><td style="width: 50%;"><label>Enter Course Title List: <textarea id="crstitles1-1" name="crstitles1-1" class="textarea1-1" rows="4" style="width: 95%;"></textarea></label></td></tr></tbody></table><table style="width: 100%; vertical-align: top; top: 0px; background-color: aliceblue;"><caption style="background-color: aliceblue;"><h4>Search By Counselor List (Must be comma delimited GUIDs):</h4></caption><tbody><tr><td style="width: 50%;"><label>Enter Counselor List: <textarea id="counslr1-1" name="counslr1-1" class="textarea1-1" rows="4" style="width: 95%;"></textarea></label></td></tr></tbody></table>
+        </div>  
+    </body>
+</html>

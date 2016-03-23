@@ -1,0 +1,53 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+span {
+    font-style: italic;
+}
+
+#calendarOverlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height:100%;
+}
+
+#calendar{
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: 12.5%;
+}
+#calTable{
+    text-align: center;
+    width:100%;
+    height:100%;
+    padding: 2px;
+    padding-bottom: 2%;
+}
+#calTable td{
+    display: grid;
+    width: 14.28714%;
+    padding:0px;
+    margin:0px;
+    text-align: center;
+}
+.calHover:hover{
+    background-color: #DEDEDE;
+    border-radius: 5px;
+    color: black;
+}
+.nonCal{
+    background-color: #F2F2F2;
+    color: #5C5C5C;
+}
+#month, #minusYear, #minusMonth, #plusYear, #plusMonth{
+    font-weight: bold;
+    font-size: 24px;
+}
